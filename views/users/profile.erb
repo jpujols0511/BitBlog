@@ -1,0 +1,11 @@
+<% if session[:user_id] %>
+
+<form class="" action="/delete_user" method="post">
+  <input type="submit" name="" value="Delete user">
+</form>
+
+<%else%>
+
+<% redirect "/" %>
+
+<%end%>

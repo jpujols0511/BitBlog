@@ -1,0 +1,11 @@
+
+<% if session[:user_id] %>
+  <% @current_user = User.find_by(id: session[:user_id])%>
+  <% @current_user.destroy %>
+  <div class="">
+    <p>User <%= session[:name] %> was successfully deleted</p>
+  </div>
+  <% else %>
+  <%redirect "/"%>
+
+  <%end%>

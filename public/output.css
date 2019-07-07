@@ -1,0 +1,99 @@
+body {
+  font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-weight: 300;
+  color: #181818;
+  font-size: 1em;
+  line-height: 1.8;
+  text-rendering: optimizeLegibility;
+}
+
+.nav-link {
+  color: #fff;
+  font-weight: 500;
+}
+
+.navbar-brand {
+  font-weight: 600;
+  color: #fff;
+}
+
+.nav-link:hover {
+  color: #8490a3;
+}
+
+.home-nav {
+  background-color: #006c98 !important;
+  box-shadow: -1px 1px 9px black;
+}
+.home-nav .user-icon {
+  padding-left: 68rem;
+}
+.home-nav .logout-icon {
+  padding-right: 1rem;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 400;
+}
+.login-container {
+  width: 40%;
+  margin: 0 auto;
+  padding-top: 5rem;
+}
+
+.home-image {
+  width: 1536px;
+  height: 619px;
+  background-image: url("https://jrumblhome.files.wordpress.com/2019/07/calm.jpg");
+  background-repeat: no-repeat;
+}
+
+.feature-box {
+  background: #c43d80;
+  color: #fff;
+  display: inline-block;
+  font-size: 0.71111em;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0.25rem;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.main-header {
+  text-align: center;
+  font-size: 3.375em;
+  font-weight: 300;
+  clear: both;
+  margin: 0 auto;
+  color: #fff;
+  letter-spacing: 0;
+  line-height: 1.2;
+  text-shadow: 0 0 12px #000;
+  text-rendering: optimizeLegibility;
+  padding-top: 13rem;
+  width: 20%;
+}
+
+.special {
+  padding-left: 0rem;
+}
+
+.user-links {
+  color: #fff !important;
+  text-shadow: 0 0 12px #000;
+}
+
+.fa-2x {
+  font-size: 1.6em;
+}
+
+.blog-container {
+  margin: 0 auto;
+  text-align: center;
+  margin: 5rem;
+}
+.blog-container .blog-title {
+  color: #000;
+}
+
+/*# sourceMappingURL=output.css.map */

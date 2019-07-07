@@ -1,0 +1,37 @@
+
+<% if session[:user_id] %>
+
+<h1>Post your blog!</h1>
+<form class="blog-form" action="/" method='post'>
+  <input type='text' name='blog[title]' placeholder='Enter your blog’s title…'><br>
+  <textarea name='blog[content]' rows='8' cols='80'></textarea>
+  <br>
+  <input type="file" name="blog[image_url]" accept="image/*">
+
+  <input  style='border: none;' name='blog[created_by]' value='<%="By #{session[:name]}"%>' readonly>
+  <br>
+  <input type='submit' value='Post' >
+
+</form>
+
+<form class="" action="/delete_post" method="post">
+  <input type="submit" name="" value="Delete posts">
+</form>
+
+<form class="" action="/blog" method="post">
+  <input type="submit" name="" value="myposts">
+</form>
+<form class="" action="/blogs" method="post">
+  <input type="submit" name="" value="allposts">
+</form>
+<% else %>
+<div class="home-image">
+  <h1 class='main-header'>BitBlog Tech Blog</h1>
+
+
+</div>
+<span class='feature-box'>Featured</span>
+
+<% end %>
+<%= session[:user_id] %>
+<%= session[:name] %>

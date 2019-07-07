@@ -1,0 +1,18 @@
+<%if session[:user_id] %>
+<% @blogs.each do |blog| %>
+<article class="blog-container">
+  <div class="blog-title">
+  <h3><%= blog.title %></h3>
+</div>
+<div class="blog-content">
+
+  <p><%= blog.content%></p>
+</div>
+  <p><%= blog.created_by %></p>
+  <img src="<%=blog.image_url%>" alt="">
+</article>
+  <% end %>
+
+<%else%>
+<%redirect "/"%>
+<%end%>

@@ -1,0 +1,7 @@
+<% @blogs.each do |blog| %>
+  <% if blog.user_id == session[:user_id] %>
+  <p><%=blog.title%></p>
+  <p><%=blog.content%></p>
+  <p><%=blog.created_by%></p>
+  <%end%>
+<%end%>
