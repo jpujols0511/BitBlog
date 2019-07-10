@@ -8,6 +8,7 @@ require_relative "mailer"
 # ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: './database.sqlite3')
 # set :database, {adapter: "sqlite3", database: "./database.sqlite3"}
 
+
 #DEPLOYMENT
 require "active_record"
 ActiveRecord::Base.establish_connection(ENV["DATABASE_URL"])

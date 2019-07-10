@@ -2,23 +2,32 @@
 <% require 'erb' %>
 <% @blogs.each do |blog| %>
 <article class="blog-container">
+  <%if blog.user_id == session[:user_id] %>
+  <div class="delete-post-blog">
+    <form class="" action="/delete_post" method="post">
+      <input type="submit" class='form-control btn btn-danger' name="" value="Delete post">
+    </form>
+  </div>
+  <div class="edit-post-blog">
+    <form class="" action="" method="post">
+      <input type="submit" class='form-control btn btn-info' name="" value="Edit Post">
+    </form>
+  </div>
+
+  <%end%>
   <div class="blog-title">
   <h3><%= ERB::Util.html_escape(blog.title) %></h3>
 </div>
 <div class="blog-content">
 
   <p><%= ERB::Util.html_escape(blog.content)%></p>
+  <small class='post-created-by'>By <%= blog.created_by %></small>
 </div>
-<img class='blog-img img-thumbnail' src="/uploads/<%=blog.image_url%>" alt=" ">
+<%if blog.image_url.nil? %>
+<%else%>
+<img class='blog-img img-fluid' src="/uploads/<%=blog.image_url%>" alt=" ">
 <br>
-  <small>By <%= blog.created_by %></small>
-  <%if blog.user_id == session[:user_id] %>
-
-  <form class="" action="/delete_post" method="post">
-    <input type="submit" name="" value="">
-  </form>
-
-  <%end%>
+<%end%>
 </article>
   <% end %>
 

@@ -120,17 +120,21 @@ body {
   text-align: center;
   padding-top: 3rem;
   background: whitesmoke;
+  margin-top: 4rem;
+  width: 58%;
+  box-shadow: -1px 1px 11px 0px black;
+  padding-bottom: 2rem;
 }
 
 .blog-text-content {
   resize: none;
-  width: 40%;
+  width: 65%;
   margin: 0 auto;
   margin-botom: 1rem;
 }
 
 .blog-title-content {
-  width: 40%;
+  width: 65%;
   margin: 0 auto;
   margin-top: 2rem;
 }
@@ -147,7 +151,7 @@ body {
 
 .blog-img-upl {
   margin: 0 auto;
-  width: 40%;
+  width: 65%;
 }
 
 .register-input-area {
@@ -156,6 +160,29 @@ body {
 
 .email-area {
   line-height: 1.1;
+}
+
+.post-created-by {
+  color: #787e87;
+  padding-left: 34rem;
+}
+
+.blog-content {
+  text-align: left;
+}
+
+.delete-post-blog {
+  width: 8%;
+  margin: 0 auto;
+  text-align: left;
+  margin-right: 23rem;
+}
+
+.edit-post-blog {
+  width: 8%;
+  margin: 0 auto;
+  text-align: left;
+  margin-left: 23rem;
 }
 
 /*# sourceMappingURL=output.css.map */
