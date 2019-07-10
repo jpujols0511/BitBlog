@@ -2,6 +2,7 @@ source "https://rubygems.org"
   gem "sinatra-activerecord"
   gem "rake"
   gem "actionmailer"
+  gem "bcrypt"
 
   group :development do
     gem "sqlite3"
