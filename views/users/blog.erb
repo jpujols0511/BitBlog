@@ -1,15 +1,24 @@
 <%if session[:user_id] %>
+<% require 'erb' %>
 <% @blogs.each do |blog| %>
 <article class="blog-container">
   <div class="blog-title">
-  <h3><%= blog.title %></h3>
+  <h3><%= ERB::Util.html_escape(blog.title) %></h3>
 </div>
 <div class="blog-content">
 
-  <p><%= blog.content%></p>
+  <p><%= ERB::Util.html_escape(blog.content)%></p>
 </div>
-  <p><%= blog.created_by %></p>
-  <img src="<%=blog.image_url%>" alt="">
+<img class='blog-img img-thumbnail' src="/uploads/<%=blog.image_url%>" alt=" ">
+<br>
+  <small>By <%= blog.created_by %></small>
+  <%if blog.user_id == session[:user_id] %>
+
+  <form class="" action="/delete_post" method="post">
+    <input type="submit" name="" value="">
+  </form>
+
+  <%end%>
 </article>
   <% end %>
 

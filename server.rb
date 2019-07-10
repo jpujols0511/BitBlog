@@ -1,7 +1,8 @@
 require "sinatra"
 require "sinatra/activerecord"
 require "bcrypt"
-
+require "action_mailer"
+require_relative "mailer"
 
 ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: './database.sqlite3')
 
@@ -11,11 +12,9 @@ enable :sessions
 
 class User < ActiveRecord::Base
   include BCrypt
-
   def password
     @password ||= Password.new(password_hash)
   end
-
   def password=(new_password)
     @password = Password.create(new_password)
     self.password_hash = @password
@@ -25,6 +24,12 @@ end
 class Blog < ActiveRecord::Base
 end
 
+def send_email(recipient, confirmation, last_name)
+  Newsletters.welcome_email(recipient, confirmation, last_name).deliver_now
+end
+$params = {}
+$code = ''
+
 get "/" do
   puts "Running"
   erb :home
@@ -33,7 +38,18 @@ end
 post "/" do
   @blog = Blog.new(params["blog"])
   @blog_id = session[:user_id]
+  if params[:image] && params[:image][:filename]
+      @filename = params[:image][:filename]
+      file = params[:image][:tempfile]
+
+      File.open("./public/uploads/#{@filename}", 'wb') do |f|
+        f.write(file.read)
+      end
+    end
  if @blog.save
+   @blog.update(image_url: @filename)
+   @blog.update(user_id: session[:user_id])
+   @blog.update(created_by: session[:name])
    @blogs = Blog.all
    erb :home
  else
@@ -46,9 +62,13 @@ get "/blogs" do
   erb :'users/blog'
 end
 
-post "/blog" do
+get "/myblogs" do
   @blogs = Blog.all
   erb :'users/myposts'
+end
+
+get "/settings" do
+  erb :'users/settings'
 end
 
 get "/signup" do
@@ -57,14 +77,34 @@ get "/signup" do
 end
 
 post "/signup" do
-  @user = User.new(params)
-  @user.password = params[:password]
+  $params = params
+  $code = rand.to_s[2..8]
+  send_email(params[:email],$code ,params[:last_name])
+  erb :'users/confirmation'
 
-  if @user.save!
-    p "#{@user.first_name} was saved to the database"
-    redirect "/thanks"
-  end
 end
+
+post '/users/confirmation' do
+  p $params
+  if params[:confirmation] == $code
+    @user = User.new($params)
+    @user.password = $params[:password]
+    if @user.save!
+      p "#{@user.first_name} was saved to the database"
+      redirect "/thanks"
+    end
+  else
+    p "Error Wrong code"
+    redirect "/users/confirmation"
+
+  end
+
+end
+
+get "/thanks" do
+  erb :'users/thanks'
+end
+
 
 get "/thanks" do
   erb :'users/thanks'
@@ -79,12 +119,13 @@ get "/login" do
 end
 
 post "/login" do
-  @user = User.find_by(email: params['email'])
+  @user = User.find_by(email: params[:email])
   if @user
     if @user.password == params[:password]
       p "User authenticated succesfuly"
       session[:user_id] = @user.id
       session[:name] = "#{@user.first_name} #{@user.last_name}"
+      session[:email] = @user.email
 
       redirect "/"
     else

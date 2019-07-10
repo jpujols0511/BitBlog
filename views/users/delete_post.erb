@@ -1,1 +1,13 @@
-<% @delete_post = Blog.destroy_all %>
+
+
+<% if session[:user_id] %>
+  <%$current_post = Blog.find_by(user_id: session[:user_id])%>
+  <%$current_post.destroy%>
+  <div class="">
+    <p>Blog was successfully deleted</p>
+  </div>
+<%else%>
+
+<%redirect "/"%>
+
+<%end%>

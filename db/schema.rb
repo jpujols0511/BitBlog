@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2019_07_03_151214) do
     t.text "content"
     t.string "image_url"
     t.string "created_by"
+    t.integer "user_id"
     t.datetime "created_at"
   end
 

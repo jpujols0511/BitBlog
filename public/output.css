@@ -96,4 +96,66 @@ body {
   color: #000;
 }
 
+.blog-img {
+  width: 10%;
+}
+
+.blog-content {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.get-started-container {
+  width: 30%;
+  margin: 0 auto;
+}
+
+.get-started-title {
+  text-align: center;
+  padding-left: 12rem;
+}
+
+.post-container {
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 3rem;
+  background: whitesmoke;
+}
+
+.blog-text-content {
+  resize: none;
+  width: 40%;
+  margin: 0 auto;
+  margin-botom: 1rem;
+}
+
+.blog-title-content {
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+.register-form {
+  margin: 0 auto;
+  text-align: center;
+  width: 35%;
+  background-color: whitesmoke;
+  margin-top: 5rem;
+  padding: 1rem;
+  box-shadow: -1px 1px 11px 0px black;
+}
+
+.blog-img-upl {
+  margin: 0 auto;
+  width: 40%;
+}
+
+.register-input-area {
+  padding: 1rem;
+}
+
+.email-area {
+  line-height: 1.1;
+}
+
 /*# sourceMappingURL=output.css.map */

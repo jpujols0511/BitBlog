@@ -19,24 +19,30 @@ body{
   font-weight: 600;
   color: #fff;
 }
+
 .nav-link:hover{
   color: #8490a3;
 }
+
 .home-nav{
   background-color: #006c98!important;
   box-shadow: -1px 1px 9px black;
+
   .user-icon{
     padding-left: 68rem;
   }
+
   .logout-icon{
     padding-right: 1rem;
     text-decoration: none;
     color: #fff;
     font-weight: 400;
   }
+
   .user-name{
 
   }
+
 }
 
 .login-container{
@@ -54,14 +60,14 @@ body{
 
 .feature-box{
   background: #c43d80;
-color: #fff;
-display: inline-block;
-font-size: .71111em;
-font-weight: 700;
-line-height: 1;
-padding: .25rem;
-text-transform: uppercase;
-z-index: 1;
+  color: #fff;
+  display: inline-block;
+  font-size: .71111em;
+  font-weight: 700;
+  line-height: 1;
+  padding: .25rem;
+  text-transform: uppercase;
+  z-index: 1;
 }
 
 .main-header{
@@ -91,7 +97,6 @@ z-index: 1;
 
 .fa-2x{
   font-size: 1.60em;
-
 }
 
 .blog-container{
@@ -101,4 +106,66 @@ z-index: 1;
   .blog-title{
     color: #000;
   }
+}
+
+.blog-img{
+  width: 10%;
+}
+
+.blog-content{
+  width: 50%;
+  margin: 0 auto;
+}
+
+.get-started-container{
+  width: 30%;
+  margin: 0 auto;
+}
+
+.get-started-title{
+  text-align: center;
+  padding-left: 12rem;
+}
+
+.post-container{
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 3rem;
+  background: whitesmoke;
+}
+
+.blog-text-content{
+  resize: none;
+  width: 40%;
+  margin: 0 auto;
+  margin-botom: 1rem;
+}
+
+.blog-title-content{
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+.register-form{
+  margin: 0 auto;
+  text-align: center;
+  width: 35%;
+  background-color: whitesmoke;
+  margin-top: 5rem;
+  padding: 1rem;
+  box-shadow: -1px 1px 11px 0px black;
+}
+
+.blog-img-upl{
+  margin: 0 auto;
+  width: 40%;
+}
+
+.register-input-area{
+  padding: 1rem;
+}
+
+.email-area{
+  line-height: 1.1;
 }

@@ -1,7 +1,21 @@
+
+
 <% @blogs.each do |blog| %>
+
   <% if blog.user_id == session[:user_id] %>
-  <p><%=blog.title%></p>
-  <p><%=blog.content%></p>
-  <p><%=blog.created_by%></p>
+  <% require 'erb' %>
+  <article class="my-blogs">
+    <div class="">
+    <h3><%=ERB::Util.html_escape(blog.title)%></h3>
+    </div>
+    <div class="">
+
+  <p><%=ERB::Util.html_escape(blog.content)%></p>
+  <img src='uploads/<%=blog.image_url%>' alt=" ">
+  <br>
+  <small><%=blog.created_by%></small>
+  </div>
+</article>
   <%end%>
+
 <%end%>

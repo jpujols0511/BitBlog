@@ -1,5 +1,12 @@
-source "https://rubygems.org" do
+source "https://rubygems.org"
   gem "sinatra-activerecord"
-  gem "sqlite3"
   gem "rake"
-end
+  gem "actionmailer"
+
+  group :development do
+    gem "sqlite3"
+  end
+
+  group :production do
+    gem "pg"
+  end

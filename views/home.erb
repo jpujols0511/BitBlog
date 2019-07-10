@@ -1,37 +1,26 @@
 
 <% if session[:user_id] %>
 
-<h1>Post your blog!</h1>
-<form class="blog-form" action="/" method='post'>
-  <input type='text' name='blog[title]' placeholder='Enter your blog’s title…'><br>
-  <textarea name='blog[content]' rows='8' cols='80'></textarea>
-  <br>
-  <input type="file" name="blog[image_url]" accept="image/*">
+<div class="post-container form-group">
 
-  <input  style='border: none;' name='blog[created_by]' value='<%="By #{session[:name]}"%>' readonly>
+<h1>Post your blog!</h1>
+<form class="blog-form" action="/" method='post' enctype="multipart/form-data">
+  <input type='text' class='form-control blog-title-content' name='blog[title]' placeholder='Enter your blog’s title…'><br>
+  <textarea class='blog-text-content form-control' name='blog[content]' rows='8' cols='80' placeholder="What's in your mind"></textarea>
+  <br>
+  <input class='form-control-file blog-img-upl' id="exampleFormControlFile1" type="file" name="image" accept="image/*">
+  
+
   <br>
   <input type='submit' value='Post' >
 
 </form>
+</div>
 
-<form class="" action="/delete_post" method="post">
-  <input type="submit" name="" value="Delete posts">
-</form>
-
-<form class="" action="/blog" method="post">
-  <input type="submit" name="" value="myposts">
-</form>
-<form class="" action="/blogs" method="post">
-  <input type="submit" name="" value="allposts">
-</form>
 <% else %>
 <div class="home-image">
   <h1 class='main-header'>BitBlog Tech Blog</h1>
-
-
 </div>
-<span class='feature-box'>Featured</span>
+<!-- <span class='feature-box'>Featured</span> -->
 
 <% end %>
-<%= session[:user_id] %>
-<%= session[:name] %>

@@ -1,18 +1,42 @@
-<h1>Signup</h1>
-<form action="/signup" method="post">
-  <label>First Name</label>
-  <input type="text" name="first_name"><br>
+<div class="register-form">
 
-  <label>Last Name</label>
-  <input type="text" name="last_name"><br>
+    <h1>Signup</h1>
 
-  <label>Email</label>
-  <input type="email" name="email"><br>
+    <section class='register-input-area'>
 
-  <label>Password</label>
-  <input type="password" name="password"><br>
+  <form action="/signup" method="post">
+    <div class="form-row">
+    <div class="form-group col-md-6">
+      <input type="text" name='first_name' class="form-control" id="inputEmail4" placeholder="First Name">
+    </div>
+    <div class="form-group col-md-6">
+      <input type="text" name='last_name' class="form-control" id="inputPassword4" placeholder="Last Name">
+    </div>
+  </div>
+  <div class="form-group email-area">
+    <input type="email" class="form-control" name="email" placeholder='Email'><br>
 
-  <p>
-    <input type="submit">
-  </p>
+    <input type="email" class="form-control" placeholder='Confirm Email'><br>
+
+    <input type="password" class="form-control" name="password" placeholder='Password'><br>
+
+    <input type="password" class="form-control" placeholder='Confirm Password'><br>
+
+    <div class="form-row align-items-center">
+    <div class="col-auto my-1">
+      <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+        <option selected>Gender...</option>
+        <option value="1">Female</option>
+        <option value="2">Male</option>
+        <option value="3">Other</option>
+      </select>
+    </div>
+    <br>
+
+
+  </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+</section>
+</div>

@@ -1,0 +1,15 @@
+
+
+<% if session[:user_id] %>
+<div class="">
+  <span>Name</span>
+  <p><%=session[:name]%></p>
+  <span>Email</span>
+  <p><%=session[:email]%></p>
+</div>
+
+<%else%>
+
+<%redirect "/" %>
+
+<%end%>
