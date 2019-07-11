@@ -7,25 +7,25 @@
   <form action="/signup" method="post">
     <div class="form-row">
     <div class="form-group col-md-6">
-      <input type="text" name='first_name' class="form-control" id="inputEmail4" placeholder="First Name">
+      <input type="text" name='first_name' class="form-control" id="inputEmail4" placeholder="First Name" required>
     </div>
     <div class="form-group col-md-6">
-      <input type="text" name='last_name' class="form-control" id="inputPassword4" placeholder="Last Name">
+      <input type="text" name='last_name' class="form-control" id="inputPassword4" placeholder="Last Name" required>
     </div>
   </div>
   <div class="form-group email-area">
-    <input type="email" class="form-control" name="email" placeholder='Email'><br>
+    <input type="email" class="form-control" name="email" placeholder='Email' required><br>
 
-    <input type="email" class="form-control" placeholder='Confirm Email'><br>
+    <input type="email" class="form-control" placeholder='Confirm Email' required><br>
 
-    <input type="password" class="form-control" name="password" placeholder='Password'><br>
+    <input type="password" class="form-control" name="password" placeholder='Password' required><br>
 
-    <input type="password" class="form-control" placeholder='Confirm Password'><br>
+    <input type="password" class="form-control" placeholder='Confirm Password' required><br>
 
     <div class="form-row align-items-center">
     <div class="col-auto my-1">
       <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
-      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" required>
         <option selected>Gender...</option>
         <option value="1">Female</option>
         <option value="2">Male</option>

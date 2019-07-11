@@ -4,14 +4,14 @@ require "bcrypt"
 require "action_mailer"
 require_relative "mailer"
 
-# #MAINTENANCE
-# ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: './database.sqlite3')
-# set :database, {adapter: "sqlite3", database: "./database.sqlite3"}
+#MAINTENANCE
+ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: './database.sqlite3')
+set :database, {adapter: "sqlite3", database: "./database.sqlite3"}
 
 
 #DEPLOYMENT
-require "active_record"
-ActiveRecord::Base.establish_connection(ENV["DATABASE_URL"])
+# require "active_record"
+# ActiveRecord::Base.establish_connection(ENV["DATABASE_URL"])
 
 enable :sessions
 
@@ -85,12 +85,14 @@ post "/signup" do
   $params = params
   $code = rand.to_s[2..8]
   send_email(params[:email],$code ,params[:last_name])
+  @confirmation_email = params[:email]
   erb :'users/confirmation'
 
 end
 
 post '/users/confirmation' do
   p $params
+  
   if params[:confirmation] == $code
     @user = User.new($params)
     @user.password = $params[:password]
