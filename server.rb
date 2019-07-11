@@ -2,7 +2,6 @@ require "sinatra"
 require "sinatra/activerecord"
 require "bcrypt"
 require "action_mailer"
-require "shotgun"
 require_relative "mailer"
 
 #MAINTENANCE
