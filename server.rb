@@ -63,7 +63,7 @@ post "/" do
 end
 
 get "/blogs" do
-  @blogs = Blog.all
+  @blogs = Blog.all.order(created_at: :desc)
   erb :'users/blog'
 end
 

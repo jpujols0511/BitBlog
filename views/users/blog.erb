@@ -23,13 +23,13 @@
   <p><%= ERB::Util.html_escape(blog.content)%></p>
   <small class='post-created-by'>By <%= blog.created_by %></small>
 </div>
-<%if blog.image_url.nil? %>
-<%else%>
-<img class='blog-img img-fluid' src="/uploads/<%=blog.image_url%>" alt=" ">
-<br>
-<%end%>
+  <%if blog.image_url.nil? %>
+  <%else%>
+    <img class='blog-img img-fluid' src="/uploads/<%=blog.image_url%>" alt=" ">
+    <br>
+  <%end%>
 </article>
-  <% end %>
+<% end %>
 
 <%else%>
 <%redirect "/"%>
