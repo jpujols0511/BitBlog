@@ -2,28 +2,36 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/ec39018a70.js"></script>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <link rel="stylesheet" id="modern-business-fonts-css" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans%3A300%2C300i%2C500%2C700&amp;subset=latin%2Clatin-ext" type="text/css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
     <link rel="stylesheet" href="output.css">
     <link rel="stylesheet" href="nav.css">
     <title>BitBlog</title>
   </head>
   <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light home-nav">
-  <a class="navbar-brand title-text" href="/"><img src="https://thelogo.shop/wp-content/uploads/2016/12/09-Letter-B.png" width='40' height='40' alt=""></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
+  <nav class="navbar home-nav is-transparent" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="" href="/">
+        <img src="https://thelogo.shop/wp-content/uploads/2016/12/09-Letter-B.png" width="40" height="40">
+      </a>
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
   <% if session[:user_id] %>
-  <link rel="stylesheet" href="output.css">
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <!-- <link rel="stylesheet" href="output.css"> -->
+  <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
@@ -41,7 +49,7 @@
     <li class="nav-item dropdown">
 
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i class="far fa-user fa-2x"> </i>
+        <i class="far fa-user "> </i>
       </a>
 
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -56,15 +64,88 @@
     </ul>
       <a href="/logout" class='logout-icon'>
         Logout
-      </a>
+      </a> -->
+
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item no-hover" href="/">
+              Home
+            </a>
+
+
+            <div class="navbar-item has-dropdown is-hoverable" id='newsfeed-section'>
+              <a class="navbar-link" id='dropdown-news'>
+                Newsfeed
+              </a>
+
+              <div class="navbar-dropdown">
+                <a class="navbar-item" href="/blogs" id='blogs'>
+                  All Blogs
+                </a>
+                <a class="navbar-item">
+                  Trending
+                </a>
+                <a class="navbar-item">
+                  News
+                </a>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="navbar-end">
+            <div class="navbar-item">
+                  <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                      <i class="far fa-user fa-2x"> </i>
+                    </a>
+
+                    <div class="navbar-dropdown">
+                      <a id="profile-name" aria-disabled="true" disabled class="navbar-item disabled">
+                        <%=session[:name]%>
+                      </a>
+                      <hr class="navbar-divider">
+                      <a class="navbar-item" href="/profile">
+                        My Profile
+                      </a>
+                      <a class="navbar-item" href="/myblogs">
+                        My Blogs
+                      </a>
+                      <hr class="navbar-divider">
+                      <a class="navbar-item" href="/settings">
+                        Settings
+                      </a>
+                    </div>
+                  </div>
+
+                  <a class="navbar-item no-hover" href="/logout">
+                    Logout
+                  </a>
+          </div>
+        </div>
+
 
     <%else%>
-      <a class="nav-link special" href="/login"> Log In</a>
-      <a class="nav-link" href="/signup"> Get Started</a>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a class="navbar-item no-hover" href="/login">
+            Log In
+          </a>
+          <a class="navbar-item no-hover" href="/signup">
+              Get Started
+            </a>
+        </div>
+      </div>
+    </div>
+
+
+
 
     <%end%>
-  </div>
-</nav>
+
+  </nav>
+<!-- </nav> -->
 
 
 

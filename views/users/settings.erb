@@ -1,11 +1,14 @@
 
 
 <% if session[:user_id] %>
-<div class="">
-  <span>Name</span>
-  <p><%=session[:name]%></p>
-  <span>Email</span>
-  <p><%=session[:email]%></p>
+<div class="settings-container">
+  <div class="profile-header">
+    <h1>My Profile</h1>
+  </div>
+  <span><strong>Name:</strong> <%=session[:name]%> </span>
+  <br>
+  <span><strong>Email:</strong> <%=session[:email]%></span>
+  <p></p>
 </div>
 
 <%else%>

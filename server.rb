@@ -2,16 +2,17 @@ require "sinatra"
 require "sinatra/activerecord"
 require "bcrypt"
 require "action_mailer"
+require "shotgun"
 require_relative "mailer"
 
 #MAINTENANCE
-# ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: './database.sqlite3')
-# set :database, {adapter: "sqlite3", database: "./database.sqlite3"}
+ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: './database.sqlite3')
+set :database, {adapter: "sqlite3", database: "./database.sqlite3"}
 
-
-#DEPLOYMENT
-require "active_record"
-ActiveRecord::Base.establish_connection(ENV["DATABASE_URL"])
+#
+# #DEPLOYMENT
+# require "active_record"
+# ActiveRecord::Base.establish_connection(ENV["DATABASE_URL"])
 
 enable :sessions
 
