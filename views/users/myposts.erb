@@ -11,7 +11,10 @@
     <div class="">
 
   <p><%=ERB::Util.html_escape(blog.content)%></p>
-  <img src='uploads/<%=blog.image_url%>' alt=" ">
+  <%if blog.image_url.nil? %>
+  <%else%>
+  <img style='width: 30%;'src='uploads/<%=blog.image_url%>' alt=" ">
+  <%end%>
   <br>
   <small><%=blog.created_by%></small>
   </div>
