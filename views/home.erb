@@ -3,7 +3,7 @@
 
 <div class="post-container form-group">
 
-<h1>Post your blog!</h1>
+<h1 class='blog-title'>Blog Away!</h1>
 <form class="blog-form" action="/" method='post' enctype="multipart/form-data">
   <input type='text' class='form-control blog-title-content' name='blog[title]' placeholder='Enter your blog’s title…'><br>
   <textarea class='blog-text-content form-control' name='blog[content]' rows='8' cols='80' placeholder="What's in your mind"></textarea>
@@ -12,14 +12,14 @@
 
 
   <br>
-  <input type='submit' value='Post' >
+  <button type="submit" class="btn btn-success">Post</button>
 
 </form>
 </div>
 
 <% else %>
 <div class="home-image">
-  <h1 class='main-header'>BitBlog Tech Blog</h1>
+  <h1 class='main-header'>BitBlog</h1>
 </div>
 <!-- <span class='feature-box'>Featured</span> -->
 

@@ -5,6 +5,7 @@ body {
   font-size: 1em;
   line-height: 1.8;
   text-rendering: optimizeLegibility;
+  height: 100%;
 }
 
 .nav-link {
@@ -51,14 +52,35 @@ body {
 .home-nav #newsfeed-section #blogs {
   color: #000;
 }
+.home-nav #newsfeed-section #blogs:hover {
+  color: #8c97a8;
+}
 .home-nav #newsfeed-section .navbar-dropdown {
   color: #000;
+}
+.home-nav #newsfeed-section a:hover {
+  color: #8c97a8;
+}
+.home-nav .profile-dropdown a {
+  color: #000;
+}
+.home-nav .profile-dropdown:hover {
+  color: #8c97a8;
 }
 
 .login-container {
   width: 40%;
   margin: 0 auto;
   padding-top: 5rem;
+}
+.login-container .login-header {
+  font-size: 30px;
+  text-align: center;
+  padding: 1em;
+}
+.login-container .login-btn-container {
+  margin: 0 auto;
+  text-align: center;
 }
 
 .home-image {
@@ -169,6 +191,10 @@ body {
   padding: 1rem;
   box-shadow: -1px 1px 11px 0px black;
 }
+.register-form .register-header {
+  font-size: 30px;
+  padding: 0.5em;
+}
 
 .blog-img-upl {
   margin: 0 auto;
@@ -241,6 +267,7 @@ body {
   text-align: left;
   width: 30%;
   background-color: whitesmoke;
+  box-shadow: 0px 1px 6px black;
 }
 .settings-container .profile-header {
   margin: 0 auto;
@@ -248,8 +275,18 @@ body {
   margin-top: 3rem;
   padding: 3rem;
 }
-.settings-container span {
-  color: #fff;
+.settings-container .my-profile-page {
+  padding: 1rem;
+}
+
+.blog-title {
+  font-size: 30px;
+}
+
+.settings-header {
+  font-size: 30px;
+  text-align: center;
+  padding: 1em;
 }
 
 /*# sourceMappingURL=output.css.map */

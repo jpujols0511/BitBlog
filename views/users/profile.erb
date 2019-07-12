@@ -1,9 +1,54 @@
 <% if session[:user_id] %>
+<div class="settings-container">
+  <div class="profile-header">
+    <h1>My Profile</h1>
+  </div>
 
-<form class="" action="/delete_user" method="post">
-  <input type="submit" name="" value="Delete user">
-</form>
+  <div class="my-profile-page">
 
+    <div class="my-prof-content">
+      <div class="">
+        <div class="">
+          <p class='prof-text'><strong>Name:</strong> <%=session[:name]%> </p>
+        </div>
+        <div class="">
+          <form class="" method="post">
+          <button type="submit" class="btn btn-outline-info">Change</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="">
+        <p class='prof-text'><strong>Username:</strong> Syx3k </p>
+        <form class="" method="post">
+          <button type="submit" class="btn btn-outline-info">Change</button>
+        </form>
+      </div>
+
+      <div class="">
+        <p class='prof-text'><strong>Email:</strong> <%=session[:email]%></p>
+        <form class="" method="post">
+          <button type="submit" class="btn btn-outline-info">Change</button>
+        </form>
+      </div>
+      <div class="">
+
+        <p class='prof-text'><strong>Password:</strong>
+
+        </p>
+          <form class="" method="post">
+            <button type="submit" class="btn btn-outline-info">Change</button>
+          </form>
+      </div>
+      <div class="">
+
+        <p class='prof-text'><strong>Birthday:</strong> 05/11/1999 </p>
+
+
+      </div>
+    </div>
+  </div>
+</div>
 <%else%>
 
 <% redirect "/" %>

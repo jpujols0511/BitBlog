@@ -89,12 +89,23 @@ get "/signup" do
 end
 
 post "/signup" do
+  valid = true
+  valid = false if params[:first_name].gsub!(/[^0-9A-Za-z]/,'') == '' || params[:first_name] == ''
+  valid = false if params[:last_name].gsub!(/[^0-9A-Za-z]/,'') == '' || params[:last_name] == ''
+  # valid = false if params[:birthday] == ''
+  valid = false if params[:email] == ''
+  valid = false if params[:password] == ''
+  valid = false if params[:password].length < 8
+  if valid == false
+    @alert = true
+    redirect "/signup"
+  else
   $params = params
   $code = rand.to_s[2..8]
   send_email(params[:email],$code ,params[:last_name])
   @confirmation_email = params[:email]
   erb :'users/confirmation'
-
+  end
 end
 
 post '/users/confirmation' do
