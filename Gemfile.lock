@@ -38,27 +38,26 @@ GEM
     bcrypt (3.1.18)
     builder (3.2.3)
     concurrent-ruby (1.1.5)
-    crass (1.0.6)
+    crass (1.0.8)
     erubi (1.8.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
-    loofah (2.19.1)
+    loofah (2.25.3)
       crass (~> 1.0.2)
-      nokogiri (>= 1.5.9)
+      nokogiri (>= 1.19.5)
     mail (2.7.1)
       mini_mime (>= 0.1.1)
     mini_mime (1.0.2)
     minitest (5.11.3)
     mustermann (1.0.3)
-    nokogiri (1.13.10-x64-mingw32)
+    nokogiri (1.19.7-x64-mingw-ucrt)
       racc (~> 1.4)
-    nokogiri (1.13.10-x86_64-linux)
+    nokogiri (1.19.7-x86_64-linux-gnu)
       racc (~> 1.4)
     pg (1.1.4)
-    pg (1.1.4-x64-mingw32)
-    racc (1.6.1)
+    racc (1.8.1)
     rack (2.0.7)
     rack-protection (2.0.5)
       rack
@@ -85,7 +84,7 @@ GEM
       thread_safe (~> 0.1)
 
 PLATFORMS
-  x64-mingw32
+  x64-mingw-ucrt
   x86_64-linux
 
 DEPENDENCIES
